@@ -3,6 +3,9 @@ const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
 
+//models
+const Product = require("./models/products");
+
 //mongoose setup
 mongoose
   .connect("mongodb://127.0.0.1/shop_db")
