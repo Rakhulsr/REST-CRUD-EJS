@@ -12,6 +12,7 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.19.2",
+    "express-router": "^0.0.1",
     "mongoose": "^8.2.3"
   }
 }

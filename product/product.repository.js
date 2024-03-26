@@ -1,5 +1,15 @@
 const mongoose = require("mongoose");
 
+//mongoose setup
+mongoose
+  .connect("mongodb://127.0.0.1/shop_db")
+  .then((result) => {
+    console.log("DB CONNECTED");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -19,10 +29,9 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  size: {
+  category: {
     type: String,
-    Enum: ["S", "M", "L"],
-    required: true,
+    Enum: ["Baju", "Celana", "Sepatu", "Jaket"],
   },
 });
 
