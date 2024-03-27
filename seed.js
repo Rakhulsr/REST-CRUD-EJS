@@ -8,21 +8,21 @@ const seedProducts = [
     brand: "Hollister",
     price: 750000,
     color: "biru muda",
-    category: "baju",
+    category: "Baju",
   },
   {
     name: "Celana Chino",
     brand: "Levi's",
     price: 900000,
     color: "krem",
-    category: "celana",
+    category: "Celana",
   },
   {
     name: "Sweater",
     brand: "Gap",
     price: 650000,
     color: "merah muda",
-    category: "jacket",
+    category: "Jaket",
   },
 ];
 

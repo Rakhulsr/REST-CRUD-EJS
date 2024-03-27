@@ -32,6 +32,7 @@ const productSchema = new mongoose.Schema({
   category: {
     type: String,
     Enum: ["Baju", "Celana", "Sepatu", "Jaket"],
+    required: true,
   },
 });
 
