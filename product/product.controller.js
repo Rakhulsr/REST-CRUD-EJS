@@ -3,7 +3,6 @@
 
 const express = require("express");
 const router = express.Router();
-
 const Product = require("./product.repository");
 
 router.get("/", async (req, res) => {
@@ -26,9 +25,29 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  const product = await Product.findById(id);
-  res.render("products/details", { product });
+  try {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    res.render("products/details", { product });
+  } catch (error) {}
 });
 
+router.get("/:id/edit", async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findById(id);
+  res.render("products/edit", { product });
+});
+
+router.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findByIdAndUpdate(id, req.body, {
+      runValidators: true,
+    });
+
+    res.redirect("/products");
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;
