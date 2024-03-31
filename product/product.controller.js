@@ -27,6 +27,7 @@ router.post("/", async (req, res) => {
     res.redirect("/products");
   } catch (error) {
     console.log(error);
+    res.send("data gagal ditambahkan");
   }
 });
 
